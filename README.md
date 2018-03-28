@@ -49,3 +49,26 @@ $ bundle exec rubocop
 ```
 
 You do not need to include rubocop directly in your application's dependencies. kpn-style will include a specific version of `rubocop` and `rubocop-rspec` that is shared across all projects.
+
+## Style overrides
+
+Sometimes you need to override style rules. RuboCop have a nice inheritance hierachy so you can override the default settings.
+The hierachy is:
+
+```
+inherit_gem -> inherit_from -> local rules
+```
+
+For example:
+
+```yaml
+inherit_gem:
+  kpn-style:
+    - ruby-2.1.yml
+
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - exclude/file.rb
+```

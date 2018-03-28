@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['kpn']
   spec.email         = ['noreply@kpn.com']
 
-  spec.summary       = 'KPN style guides and shared style configs.'
+  spec.summary       = 'kpn style guides and shared style configs.'
   spec.homepage      = 'https://github.com/kpn-puppet/gem-kpn-style'
   spec.license       = 'Apache-2.0'
 
