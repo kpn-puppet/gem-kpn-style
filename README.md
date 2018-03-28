@@ -31,7 +31,7 @@ Create a `.rubocop.yml` with the following directives:
 ```yaml
 inherit_gem:
   kpn-style:
-    - default.yml
+    - ruby-2.1.yml
 ```
 
 Or for Ruby 2.4:

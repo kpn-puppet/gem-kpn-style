@@ -3,13 +3,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'kpn-style'
-  spec.version       = '0.1.0'
-  spec.authors       = ['Team KPN']
+  spec.version       = '0.1.1'
+  spec.authors       = ['kpn']
   spec.email         = ['noreply@kpn.com']
 
-  spec.summary       = 'kpn style guides and shared style configs.'
+  spec.summary       = 'KPN style guides and shared style configs.'
   spec.homepage      = 'https://github.com/kpn-puppet/gem-kpn-style'
-  spec.license       = 'Apache License 2.0'
+  spec.license       = 'Apache-2.0'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
