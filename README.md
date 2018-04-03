@@ -46,6 +46,10 @@ Now, run:
 
 ```bash
 $ bundle exec rubocop
+
+or
+
+$ rake rubocop
 ```
 
 You do not need to include rubocop directly in your application's dependencies. kpn-style will include a specific version of `rubocop` and `rubocop-rspec` that is shared across all projects.
@@ -72,3 +76,23 @@ AllCops:
   Exclude:
     - exclude/file.rb
 ```
+
+## Update gem
+
+1. Update the ruby-2.X.yml file
+2. Update the version parameter `spec.version` in the `kpn_style.gemspec`
+3. Tag the release: `git tag VERSION`
+4. Push changes: `git push --tags`
+5. Update the release notes on GitHub.com
+6. Build and publish:
+
+```bash
+gem build kpn_style.gemspec
+gem push kpn-style-x.x.x.gem
+```
+
+To push gems to rubygems.org you can use a `~/.gem/credentials` with the `rubygems_api_key`. You can find a small how to on the Profile edit page https://rubygems.org/profile/edit in the section `API ACCESS`.
+
+### Special thanks
+
+A special thanks to https://github.com/percy/percy-style/ for the idea and template of this Gem.
