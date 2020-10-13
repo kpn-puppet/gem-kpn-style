@@ -42,6 +42,14 @@ inherit_gem:
     - ruby-2.4.yml
 ```
 
+Or for Ruby 2.5:
+
+```yaml
+inherit_gem:
+  kpn-style:
+    - ruby-2.5.yml
+```
+
 Now, run:
 
 ```bash

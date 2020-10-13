@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'kpn-style'
-  spec.version       = '0.1.5'
+  spec.version       = '0.1.6'
   spec.authors       = ['kpn']
   spec.email         = ['noreply@kpn.com']
 
@@ -27,6 +27,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'rubocop', '~> 0.53'
-  spec.add_dependency 'rubocop-rspec', '~> 1.24'
+  spec.add_dependency 'rubocop', '~> 0.89'
+  spec.add_dependency 'rubocop-rspec', '~> 1.43'
 end
