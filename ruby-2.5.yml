@@ -13,7 +13,7 @@ AllCops:
   - pkg/**/*
   - spec/fixtures/**/*
   - vendor/**/*
-Metrics/LineLength:
+Layout/LineLength:
   Description: People have wide screens, use them.
   Max: 240
 RSpec/BeforeAfterAll:
@@ -141,7 +141,7 @@ Style/SymbolProc:
 Layout/EmptyLinesAroundAttributeAccessor:
   Description: Keep blank lines around attribute accessors.
   Enabled: true
-yout/SpaceAroundMethodCallOperator:
+Layout/SpaceAroundMethodCallOperator:
   Description: Checks method call operators to not have spaces around them.
   Enabled: true
 Lint/BinaryOperatorWithIdenticalOperands:
