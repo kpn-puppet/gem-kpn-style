@@ -13,6 +13,9 @@ AllCops:
   - pkg/**/*
   - spec/fixtures/**/*
   - vendor/**/*
+Layout/BeginEndAlignment: # (new in 0.91)
+  Description: checks whether the end keyword of begin is aligned properly.
+  Enabled: true
 Layout/LineLength:
   Description: People have wide screens, use them.
   Max: 240
@@ -147,11 +150,17 @@ Layout/SpaceAroundMethodCallOperator:
 Lint/BinaryOperatorWithIdenticalOperands:
   Description: This cop checks for places where binary operator has identical operands.
   Enabled: true
+Lint/ConstantDefinitionInBlock:
+  Description: Do not define constants within a block.
+  Enabled: true
 Lint/DeprecatedOpenSSLConstant:
   Description: Don't use algorithm constants for `OpenSSL::Cipher` and `OpenSSL::Digest`.
   Enabled: true
 Lint/DuplicateElsifCondition:
   Description: Do not repeat conditions used in if `elsif`.
+  Enabled: true
+Lint/DuplicateRequire:
+  Description: Check for duplicate `require`s and `require_relative`s.
   Enabled: true
 Lint/DuplicateRescueException:
   Description: Checks that there are no repeated exceptions used in `rescue` expressions.
@@ -159,8 +168,17 @@ Lint/DuplicateRescueException:
 Lint/EmptyConditionalBody:
   Description: This cop checks for the presence of `if`, `elsif` and `unless` branches without a body.
   Enabled: true
+Lint/EmptyFile:
+  Description: Enforces that Ruby source files are not empty.
+  Enabled: true
 Lint/FloatComparison:
   Description: Checks for the presence of precise comparison of floating point numbers.
+  Enabled: true
+Lint/HashCompareByIdentity:
+  Description: Prefer using `Hash#compare_by_identity` than using `object_id` for keys.
+  Enabled: true
+Lint/IdentityComparison:
+  Description: Prefer `equal?` over `==` when comparing `object_id`.
   Enabled: true
 Lint/MissingSuper:
   Description: >-
@@ -176,6 +194,9 @@ Lint/OutOfRangeRegexpRef:
 Lint/RaiseException:
   Description: Checks for `raise` or `fail` statements which are raising `Exception` class.
   Enabled: true
+Lint/RedundantSafeNavigation:
+  Description: Checks for redundant safe navigation calls.
+  Enabled: true
 Lint/SelfAssignment:
   Description: Checks for self-assignments.
   Enabled: true
@@ -185,8 +206,20 @@ Lint/StructNewOverride:
 Lint/TopLevelReturnWithArgument:
   Description: This cop detects top level return statements with argument.
   Enabled: true
+Lint/TrailingCommaInAttributeDeclaration:
+  Description: This cop checks for trailing commas in attribute declarations.
+  Enabled: true
 Lint/UnreachableLoop:
   Description: This cop checks for loops that will have at most one iteration.
+  Enabled: true
+Lint/UselessMethodDefinition:
+  Description: Checks for useless method definitions.
+  Enabled: true
+Lint/UselessTimes:
+  Description: Checks for useless `Integer#times` calls.
+  Enabled: true
+RSpec/StubbedMock:
+  Description: Checks that message expectations do not have a configured response.
   Enabled: true
 Style/AccessorGrouping:
   Description: Checks for grouping of accessors in `class` and `module` bodies.
@@ -203,6 +236,14 @@ Style/BisectedAttrAccessor:
   Enabled: true
 Style/CaseLikeIf:
   Description: This cop identifies places where `if-elsif` constructions can be replaced with `case-when`.
+  Enabled: true
+Style/ClassEqualityComparison:
+  Description: Enforces the use of `Object#instance_of?` instead of class comparison for equality.
+  Enabled: true
+Style/CombinableLoops:
+  Description: >-
+                  Checks for places where multiple consecutive loops over the same data
+                  can be combined into a single loop.
   Enabled: true
 Style/ExplicitBlockArgument:
   Description: >-
@@ -234,6 +275,9 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Description: Prefer `transform_values` over `each_with_object`, `map`, or `to_h`.
   Enabled: true
+Style/KeywordParametersOrder:
+  Description: Enforces that optional keyword parameters are placed at the end of the parameters list.
+  Enabled: true
 Style/OptionalBooleanParameter:
   Description: Use keyword arguments when defining method with boolean argument.
   Enabled: true
@@ -256,11 +300,19 @@ Style/RedundantRegexpCharacterClass:
 Style/RedundantRegexpEscape:
   Description: Checks for redundant escapes in Regexps.
   Enabled: false
+Style/RedundantSelfAssignment:
+  Description: Checks for places where redundant assignments are made for in place modification methods.
+  Enabled: true
 Style/SingleArgumentDig:
   Description: Avoid using single argument dig method.
   Enabled: true
 Style/SlicingWithRange:
   Description: Checks array slicing is done with endless ranges when suitable.
+  Enabled: true
+Style/SoleNestedConditional:
+  Description: >-
+                  Finds sole nested conditional nodes
+                  which can be merged into outer conditional node.
   Enabled: true
 Style/StringConcatenation:
   Description: Checks for places where string concatenation can be replaced with string interpolation.
