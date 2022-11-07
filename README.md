@@ -50,6 +50,14 @@ inherit_gem:
     - ruby-2.5.yml
 ```
 
+Or for Ruby 2.7:
+
+```yaml
+inherit_gem:
+  kpn-style:
+    - ruby-2.7.yml
+```
+
 Now, run:
 
 ```bash
@@ -76,7 +84,7 @@ For example:
 ```yaml
 inherit_gem:
   kpn-style:
-    - ruby-2.1.yml
+    - ruby-2.7.yml
 
 inherit_from: .rubocop_todo.yml
 
