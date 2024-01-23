@@ -1,0 +1,737 @@
+---
+require: rubocop-rspec
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: '3.0'
+  Include:
+  - "**/*.rb"
+  Exclude:
+  - bin/*
+  - ".vendor/**/*"
+  - Gemfile
+  - Rakefile
+  - pkg/**/*
+  - spec/fixtures/**/*
+  - vendor/**/*
+
+Capybara/ClickLinkOrButtonStyle:
+  Description: Checks for methods of button or link clicks.
+  Enabled: true
+Capybara/MatchStyle:
+  Description: Checks for usage of deprecated style methods.
+  Enabled: true
+Capybara/RedundantWithinFind:
+  Description: Checks for redundant `within find(...)` calls.
+  Enabled: true
+Capybara/RSpec/HaveSelector:
+  Description: Use `have_css` or `have_xpath` instead of `have_selector`.
+  Enabled: true
+Capybara/RSpec/PredicateMatcher:
+  Description: Prefer using predicate matcher over using predicate method directly.
+  Enabled: true
+FactoryBot/AssociationStyle:
+  Description: Use a consistent style to define associations.
+  Enabled: true
+FactoryBot/ExcessiveCreateList:
+  Description: Check for excessive model creation in a list.
+  Enabled: true
+FactoryBot/FactoryAssociationWithStrategy:
+  Description: Use definition in factory association instead of hard coding a strategy.
+  Enabled: true
+FactoryBot/FactoryNameStyle:
+  Description: Checks for name style for argument of FactoryBot::Syntax::Methods.
+  Enabled: true
+FactoryBot/IdSequence:
+  Description: Do not create a FactoryBot sequence for an id column.
+  Enabled: true
+FactoryBot/RedundantFactoryOption:
+  Description: Checks for redundant `factory` option.
+  Enabled: true
+Gemspec/DevelopmentDependencies:
+  Description: 'Checks that development dependencies are specified in Gemfile rather than gemspec.'
+  Enabled: true
+Gemspec/DeprecatedAttributeAssignment:
+  Description: 'Checks that deprecated attribute assignments are not set in a gemspec file.'
+  Enabled: true
+Gemspec/RequireMFA:
+  Description: 'Checks that the gemspec has metadata to require Multi-Factor Authentication from RubyGems.'
+  Enabled: true
+Layout/LineLength:
+  Description: People have wide screens, use them.
+  Max: 240
+Layout/LineContinuationLeadingSpace:
+  Description: >-
+                  Use trailing spaces instead of leading spaces in strings
+                  broken over multiple lines (by a backslash).
+  Enabled: true
+Layout/LineContinuationSpacing:
+  Description: 'Checks the spacing in front of backslash in line continuations.'
+  Enabled: true
+Layout/LineEndStringConcatenationIndentation:
+  Description: >-
+                 Checks the indentation of the next line after a line that
+                 ends with a string literal and a backslash.
+  Enabled: true
+Layout/SpaceBeforeBrackets:
+  Description: 'Checks for receiver with a space before the opening brackets.'
+  Enabled: true
+RSpec/BeEmpty:
+  Description: Prefer using `be_empty` when checking for an empty array.
+  Enabled: true
+RSpec/BeforeAfterAll:
+  Description: Beware of using after(:all) as it may cause state to leak between tests.
+    A necessary evil in acceptance testing.
+  Exclude:
+  - spec/acceptance/**/*.rb
+RSpec/ContainExactly:
+  Description: Checks where `contain_exactly` is used.
+  Enabled: true
+RSpec/DuplicatedMetadata:
+  Description: Avoid duplicated metadata.
+  Enabled: true
+RSpec/EmptyExampleGroup:
+  Description: Checks if an example group does not include any tests.
+  Enabled: false
+RSpec/EmptyMetadata:
+  Description: Avoid empty metadata hash.
+  Enabled: true
+RSpec/Eq:
+  Description: Use `eq` instead of `be ==` to compare objects.
+  Enabled: true
+RSpec/IndexedLet:
+  Description: Do not set up test data using indexes (e.g., `item_1`, `item_2`).
+  Enabled: true
+RSpec/HookArgument:
+  Description: Prefer explicit :each argument, matching existing module's style
+  EnforcedStyle: each
+RSpec/MatchArray:
+  Description: Checks where `match_array` is used.
+  Enabled: true
+RSpec/MetadataStyle:
+  Description: Use consistent metadata style.
+  Enabled: true
+RSpec/PendingWithoutReason:
+  PendingWithoutReason:
+  Description: Checks for pending or skipped examples without reason.
+  Enabled: true
+RSpec/ReceiveMessages:
+  Description: Checks for multiple messages stubbed on the same object.
+  Enabled: true
+RSpec/RedundantAround:
+  Description: Remove redundant `around` hook.
+  Enabled: true
+RSpec/RedundantPredicateMatcher:
+  Description: Checks for redundant predicate matcher.
+  Enabled: true
+RSpec/RemoveConst:
+  Description: Checks that `remove_const` is not used in specs.
+  Enabled: true
+RSpec/RepeatedDescription:
+  Description: Check for repeated description strings in example groups.
+  Enabled: false
+RSpec/SkipBlockInsideExample:
+  Description: Checks for passing a block to `skip` within examples.
+  Enabled: true
+RSpec/SpecFilePathFormat:
+  Description: Checks that spec file paths are consistent and well-formed.
+  Enabled: true
+RSpec/SpecFilePathSuffix:
+  Description: Checks that spec file paths suffix are consistent and well-formed.
+  Enabled: true
+RSpec/Rails/MinitestAssertions:
+  Description: Check if using Minitest matchers.
+  Enabled: true
+RSpec/Rails/NegationBeValid:
+  Description: Enforces use of `be_invalid` or `not_to` for negated be_valid.
+  Enabled: true
+RSpec/Rails/TravelAround:
+  Description: Prefer to travel in `before` rather than `around`.
+  Enabled: true
+Style/BlockDelimiters:
+  Description: Prefer braces for chaining. Mostly an aesthetical choice. Better to be consistent then.
+  EnforcedStyle: braces_for_chaining
+Style/ClassAndModuleChildren:
+  Description: Compact style reduces the required amount of indentation.
+  EnforcedStyle: compact
+Style/EmptyElse:
+  Description: Enforce against empty else clauses, but allow `nil` for clarity.
+  EnforcedStyle: empty
+Style/FormatString:
+  Description: Following the main puppet project's style, prefer the % format format.
+  EnforcedStyle: percent
+Style/FormatStringToken:
+  Description: Following the main puppet project's style, prefer the simpler template
+    tokens over annotated ones.
+  EnforcedStyle: template
+Style/Lambda:
+  Description: Prefer the keyword for easier discoverability.
+  EnforcedStyle: literal
+Style/RegexpLiteral:
+  Description: Community preference. See https://github.com/voxpupuli/modulesync_config/issues/168
+  EnforcedStyle: percent_r
+Style/TernaryParentheses:
+  Description: Checks for use of parentheses around ternary conditions. Enforce parentheses
+    on complex expressions for better readability, but seriously consider breaking
+    it up.
+  EnforcedStyle: require_parentheses_when_complex
+Style/TrailingCommaInArguments:
+  Description: Prefer always trailing comma on multiline argument lists. This makes
+    diffs, and re-ordering nicer.
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+Style/SymbolArray:
+  Description: Using percent style obscures symbolic intent of array's contents.
+  EnforcedStyle: brackets
+RSpec/MessageSpies:
+  Description: Checks that message expectations are set using spies.
+  EnforcedStyle: receive
+Style/CollectionMethods:
+  Description: Preferred collection methods.
+  Enabled: true
+Style/MethodCalledOnDoEndBlock:
+  Description: Avoid chaining a method call on a do...end block.
+  Enabled: true
+Style/StringMethods:
+  Description: Checks if configured preferred methods are used over non-preferred.
+  Enabled: true
+Layout/EndOfLine:
+  Description: Use Unix-style line endings.
+  EnforcedStyle: lf
+Metrics/AbcSize:
+  Description: >-
+                 A calculated magnitude based on number of assignments,
+                 branches, and conditions.
+  Enabled: false
+Metrics/BlockLength:
+  Description: Avoid long blocks with many lines.
+  Enabled: false
+Metrics/ClassLength:
+  Description: Avoid classes longer than 100 lines of code.
+  Enabled: false
+Metrics/CollectionLiteralLength:
+  Description: 'Checks for `Array` or `Hash` literals with many entries.'
+  Enabled: true
+Metrics/CyclomaticComplexity:
+  Description: >-
+                 A complexity metric that is strongly correlated to the number
+                 of test cases needed to validate a method.
+  Enabled: false
+Metrics/MethodLength:
+  Description: Avoid methods longer than 10 lines of code.
+  Enabled: false
+Metrics/ModuleLength:
+  Description: Avoid modules longer than 100 lines of code.
+  Enabled: false
+Metrics/ParameterLists:
+  Description: Avoid parameter lists longer than three or four parameters.
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Description: >-
+                 A complexity metric geared towards measuring complexity for a
+                 human reader.
+  Enabled: false
+RSpec/DescribeClass:
+  Description: Check that the first argument to the top-level describe is a constant.
+  Enabled: false
+RSpec/ExampleLength:
+  Description: Checks for long examples.
+  Enabled: false
+RSpec/MessageExpectation:
+  Description: Checks for consistent message expectation style.
+  Enabled: false
+RSpec/MultipleExpectations:
+  Description: Checks if examples contain too many `expect` calls.
+  Enabled: false
+RSpec/NestedGroups:
+  Description: Checks for nested example groups.
+  Enabled: false
+Style/AsciiComments:
+  Description: Use only ascii symbols in comments.
+  Enabled: false
+Style/IfUnlessModifier:
+  Description: Don't force trailing if/unless for single-line conditionals
+  Enabled: false
+Style/SymbolProc:
+  Description: Use symbols as procs instead of blocks when possible.
+  Enabled: false
+Layout/EmptyLinesAroundAttributeAccessor:
+  Description: Keep blank lines around attribute accessors.
+  Enabled: true
+Layout/SpaceAroundMethodCallOperator:
+  Description: Checks method call operators to not have spaces around them.
+  Enabled: true
+Lint/AmbiguousAssignment:
+  Description: 'Checks for mistyped shorthand assignments.'
+  Enabled: true
+Lint/AmbiguousOperatorPrecedence:
+  Description: >-
+                 Checks for expressions containing multiple binary operations with
+                 ambiguous precedence.
+  Enabled: true
+Lint/AmbiguousRange:
+  Description: 'Checks for ranges with ambiguous boundaries.'
+  Enabled: true
+Lint/ConstantOverwrittenInRescue:
+  Description: 'Checks for overwriting an exception with an exception result by use `rescue =>`.'
+  Enabled: true
+Lint/DeprecatedConstants:
+  Description: 'Checks for deprecated constants.'
+  Enabled: true
+Lint/DuplicateBranch:
+  Description: 'Checks that there are no repeated bodies within `if/unless`, `case-when` and `rescue` constructs.'
+  Enabled: true
+Lint/DuplicateMagicComment:
+  Description: 'Check for duplicated magic comments.'
+  Enabled: true
+Lint/DuplicateMatchPattern:
+  Description: 'Do not repeat patterns in `in` keywords.'
+  Enabled: true
+Lint/DuplicateRegexpCharacterClassElement:
+  Description: 'Checks for duplicate elements in Regexp character classes.'
+  Enabled: true
+Lint/EmptyBlock:
+  Description: 'Checks for blocks without a body.'
+  Enabled: true
+Lint/EmptyClass:
+  Description: 'Checks for classes and metaclasses without a body.'
+  Enabled: true
+Lint/EmptyInPattern:
+  Description: 'Checks for the presence of `in` pattern branches without a body.'
+  Enabled: true
+Lint/IncompatibleIoSelectWithFiberScheduler:
+  Description: 'Checks for `IO.select` that is incompatible with Fiber Scheduler.'
+  Enabled: true
+Lint/ItWithoutArgumentsInBlock:
+  Description: 'Checks uses of `it` calls without arguments in block.'
+  Enabled: true
+Lint/LambdaWithoutLiteralBlock:
+  Description: 'Checks uses of lambda without a literal block.'
+  Enabled: true
+Lint/LiteralAssignmentInCondition:
+  Description: 'Checks for literal assignments in the conditions.'
+  Enabled: true
+Lint/MixedCaseRange:
+  Description: 'Checks for mixed-case character ranges since they include likely unintended characters.'
+  Enabled: true
+Lint/NoReturnInBeginEndBlocks:
+  Description: 'Do not `return` inside `begin..end` blocks in assignment contexts.'
+  Enabled: true
+Lint/NonAtomicFileOperation:
+  Description: 'Checks for non-atomic file operations.'
+  Enabled: true
+Lint/NumberedParameterAssignment:
+  Description: 'Checks for uses of numbered parameter assignment.'
+  Enabled: true
+Lint/OrAssignmentToConstant:
+  Description: 'Checks unintended or-assignment to constant.'
+  Enabled: true
+Lint/RedundantDirGlobSort:
+  Description: 'Checks for redundant `sort` method to `Dir.glob` and `Dir[]`.'
+  Enabled: true
+Lint/RedundantRegexpQuantifiers:
+  Description: 'Checks for redundant quantifiers in Regexps.'
+  Enabled: true
+Lint/RefinementImportMethods:
+  Description: 'Use `Refinement#import_methods` when using `include` or `prepend` in `refine` block.'
+  Enabled: true
+Lint/RequireRangeParentheses:
+  Description: 'Checks that a range literal is enclosed in parentheses when the end of the range is at a line break.'
+  Enabled: true
+Lint/RequireRelativeSelfPath:
+  Description: 'Checks for uses a file requiring itself with `require_relative`.'
+  Enabled: true
+Lint/SymbolConversion:
+  Description: 'Checks for unnecessary symbol conversions.'
+  Enabled: true
+Lint/ToEnumArguments:
+  Description: 'Ensures that `to_enum`/`enum_for`, called for the current method, has correct arguments.'
+  Enabled: true
+Lint/TripleQuotes:
+  Description: 'Checks for useless triple quote constructs.'
+  Enabled: true
+Lint/UnexpectedBlockArity:
+  Description: 'Looks for blocks that have fewer arguments that the calling method expects.'
+  Enabled: true
+Lint/UnmodifiedReduceAccumulator:
+  Description: 'Checks for `reduce` or `inject` blocks that do not update the accumulator each iteration.'
+  Enabled: true
+Lint/UselessRescue:
+  Description: 'Checks for useless `rescue`s.'
+  Enabled: true
+Lint/UselessRuby2Keywords:
+  Description: 'Finds unnecessary uses of `ruby2_keywords`.'
+  Enabled: true
+Lint/BinaryOperatorWithIdenticalOperands:
+  Description: This cop checks for places where binary operator has identical operands.
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Description: Don't use algorithm constants for `OpenSSL::Cipher` and `OpenSSL::Digest`.
+  Enabled: true
+Lint/DuplicateElsifCondition:
+  Description: Do not repeat conditions used in if `elsif`.
+  Enabled: true
+Lint/DuplicateRescueException:
+  Description: Checks that there are no repeated exceptions used in `rescue` expressions.
+  Enabled: true
+Lint/EmptyConditionalBody:
+  Description: This cop checks for the presence of `if`, `elsif` and `unless` branches without a body.
+  Enabled: true
+Lint/FloatComparison:
+  Description: Checks for the presence of precise comparison of floating point numbers.
+  Enabled: true
+Lint/MissingSuper:
+  Description: >-
+                  This cop checks for the presence of constructors and lifecycle callbacks
+                  without calls to `super`'.
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Description: Do not mix named captures and numbered captures in a Regexp literal.
+  Enabled: true
+Lint/OutOfRangeRegexpRef:
+  Description: Checks for out of range reference for Regexp because it always returns nil.
+  Enabled: true
+Lint/RaiseException:
+  Description: Checks for `raise` or `fail` statements which are raising `Exception` class.
+  Enabled: true
+Lint/SelfAssignment:
+  Description: Checks for self-assignments.
+  Enabled: true
+Lint/StructNewOverride:
+  Description: Disallow overriding the `Struct` built-in methods via `Struct.new`.
+  Enabled: true
+Lint/TopLevelReturnWithArgument:
+  Description: This cop detects top level return statements with argument.
+  Enabled: true
+Lint/UnreachableLoop:
+  Description: This cop checks for loops that will have at most one iteration.
+  Enabled: true
+Naming/BlockForwarding:
+  Description: 'Use anonymous block forwarding.'
+  Enabled: true
+RSpec/BeEq: #
+  Description: 'Check for expectations where `be(...)` can replace `eq(...)`.'
+  Enabled: true
+RSpec/BeNil: #
+  Description: 'Ensures a consistent style is used when matching `nil`.'
+  Enabled: true
+RSpec/ChangeByZero:
+  Description: 'Prefer negated matchers over `to change.by(0)`.'
+  Enabled: true
+RSpec/ClassCheck:
+  Description: 'Enforces consistent use of `be_a` or `be_kind_of`.'
+  Enabled: true
+RSpec/ExcessiveDocstringSpacing:
+  Description: 'Checks for excessive whitespace in example descriptions.'
+  Enabled: true
+RSpec/IdenticalEqualityAssertion:
+  Description: 'Checks for equality assertions with identical expressions on both sides.'
+  Enabled: true
+RSpec/NoExpectationExample:
+  Description: 'Checks if an example contains any expectation.'
+  Enabled: false
+RSpec/SortMetadata:
+  Description: 'Sort RSpec metadata alphabetically.'
+  Enabled: true
+RSpec/SubjectDeclaration:
+  Description: 'Ensure that subject is defined using subject helper.'
+  Enabled: true
+RSpec/VerifiedDoubleReference:
+  Description: 'Checks for consistent verified double reference style.'
+  Enabled: true
+RSpec/Capybara/NegationMatcher:
+  Description: 'Enforces use of `have_no_*` or `not_to` for negated expectations.'
+  Enabled: true
+RSpec/Capybara/SpecificActions:
+  Description: 'Checks for there is a more specific actions offered by Capybara.'
+  Enabled: true
+RSpec/Capybara/SpecificFinders:
+  Description: 'Checks if there is a more specific finder offered by Capybara.'
+  Enabled: true
+RSpec/Capybara/SpecificMatcher:
+  Description: 'Checks for there is a more specific matcher offered by Capybara.'
+  Enabled: true
+RSpec/FactoryBot/ConsistentParenthesesStyle:
+  Description: 'Use a consistent style for parentheses in factory bot calls.'
+  Enabled: true
+RSpec/FactoryBot/SyntaxMethods:
+  Description: 'Use shorthands from `FactoryBot::Syntax::Methods` in your specs.'
+  Enabled: true
+RSpec/Rails/AvoidSetupHook:
+  Description: 'Checks that tests use RSpec `before` hook over Rails `setup` method.'
+  Enabled: true
+RSpec/Rails/HaveHttpStatus:
+  Description: 'Checks that tests use `have_http_status` instead of equality matchers.'
+  Enabled: true
+RSpec/Rails/InferredSpecType:
+  Description: 'Identifies redundant spec type.'
+  Enabled: true
+Security/CompoundHash:
+  Description: 'When overwriting Object#hash to combine values, prefer delegating to Array#hash over writing a custom implementation.'
+  Enabled: true
+Security/IoMethods:
+  Description: >-
+                 Checks for the first argument to `IO.read`, `IO.binread`, `IO.write`, `IO.binwrite`,
+                 `IO.foreach`, and `IO.readlines`.
+  Enabled: true
+Style/ArgumentsForwarding:
+  Description: 'Use arguments forwarding.'
+  Enabled: true
+Style/ArrayIntersect:
+  Description: 'Use `array1.intersect?(array2)` instead of `(array1 & array2).any?`.'
+  Enabled: true
+Style/CollectionCompact:
+  Description: 'Use `{Array,Hash}#{compact,compact!}` instead of custom logic to reject nils.'
+  Enabled: true
+Style/ConcatArrayLiterals:
+  Description: 'Enforces the use of `Array#push(item)` instead of `Array#concat([item])` to avoid redundant array literals.'
+  Enabled: true
+Style/ComparableClamp:
+  Description: 'Enforces the use of `Comparable#clamp` instead of comparison by minimum and maximum.'
+  Enabled: true
+Style/DataInheritance:
+  Description: 'Checks for inheritance from Data.define.'
+  Enabled: true
+Style/DirEmpty:
+  Description: >-
+                Prefer to use `Dir.empty?('path/to/dir')` when checking if a directory is empty.
+  Enabled: true
+Style/DocumentDynamicEvalDefinition:
+  Description: >-
+                When using `class_eval` (or other `eval`) with string interpolation,
+                add a comment block showing its appearance if interpolated.
+  Enabled: true
+Style/EmptyHeredoc:
+  Description: 'Checks for using empty heredoc to reduce redundancy.'
+  Enabled: true
+Style/EndlessMethod:
+  Description: 'Avoid the use of multi-lined endless method definitions.'
+  Enabled: true
+Style/EnvHome:
+  Description: "Checks for consistent usage of `ENV['HOME']`."
+  Enabled: true
+Style/ExactRegexpMatch:
+  Description: 'Checks for exact regexp match inside Regexp literals.'
+  Enabled: true
+Style/FetchEnvVar:
+  Description: >-
+                 Suggests `ENV.fetch` for the replacement of `ENV[]`.
+  Enabled: true
+Style/FileEmpty:
+  Description: >-
+                 Prefer to use `File.empty?('path/to/file')` when checking if a file is empty.
+  Enabled: true
+Style/FileRead:
+  Description: 'Favor `File.(bin)read` convenience methods.'
+  Enabled: true
+Style/FileWrite:
+  Description: 'Favor `File.(bin)write` convenience methods.'
+  Enabled: true
+Style/HashConversion:
+  Description: 'Avoid Hash[] in favor of ary.to_h or literal hashes.'
+  Enabled: true
+Style/HashExcept:
+  Description: >-
+                 Checks for usages of `Hash#reject`, `Hash#select`, and `Hash#filter` methods
+                 that can be replaced with `Hash#except` method.
+  Enabled: true
+Style/IfWithBooleanLiteralBranches:
+  Description: 'Checks for redundant `if` with boolean literal branches.'
+  Enabled: true
+Style/InPatternThen:
+  Description: 'Checks for `in;` uses in `case` expressions.'
+  Enabled: true
+Style/MagicCommentFormat:
+  Description: 'Use a consistent style for magic comments.'
+  Enabled: true
+Style/MapCompactWithConditionalBlock:
+  Description: 'Prefer `select` or `reject` over `map { ... }.compact`.'
+  Enabled: true
+Style/MapToHash:
+  Description: 'Prefer `to_h` with a block over `map.to_h`.'
+  Enabled: true
+Style/MapToSet:
+  Description: 'Prefer `to_set` with a block over `map.to_set`.'
+  Enabled: true
+Style/MinMaxComparison:
+  Description: 'Enforces the use of `max` or `min` instead of comparison for greater or less.'
+  Enabled: true
+Style/MultilineInPatternThen:
+  Description: 'Do not use `then` for multi-line `in` statement.'
+  Enabled: true
+Style/NegatedIfElseCondition:
+  Description: >-
+                Checks for uses of `if-else` and ternary operators with a negated condition
+                which can be simplified by inverting condition and swapping branches.
+  Enabled: true
+Style/NestedFileDirname:
+  Description: 'Checks for nested `File.dirname`.'
+  Enabled: true
+Style/NilLambda:
+  Description: 'Prefer `-> {}` to `-> { nil }`.'
+  Enabled: true
+Style/NumberedParameters:
+  Description: 'Restrict the usage of numbered parameters.'
+  Enabled: true
+Style/NumberedParametersLimit:
+  Description: 'Avoid excessive numbered params in a single block.'
+  Enabled: true
+Style/ObjectThen:
+  Description: 'Enforces the use of consistent method names `Object#yield_self` or `Object#then`.'
+  Enabled: true
+Style/OpenStructUse:
+  Description: >-
+                 Avoid using OpenStruct. As of Ruby 3.0, use is officially discouraged due to performance,
+                 version compatibility, and potential security issues.
+  Enabled: true
+Style/OperatorMethodCall:
+  Description: 'Checks for redundant dot before operator method call.'
+  Enabled: true
+Style/QuotedSymbols:
+  Description: 'Use a consistent style for quoted symbols.'
+  Enabled: true
+Style/RedundantArgument:
+  Description: 'Check for a redundant argument passed to certain methods.'
+  Enabled: true
+Style/RedundantArrayConstructor:
+  Description: 'Checks for the instantiation of array using redundant `Array` constructor.'
+  Enabled: true
+Style/RedundantConstantBase:
+  Description: Avoid redundant `::` prefix on constant.
+  Enabled: true
+Style/RedundantCurrentDirectoryInPath:
+  Description: 'Checks for uses a redundant current directory in path.'
+  Enabled: true
+Style/RedundantDoubleSplatHashBraces:
+  Description: 'Checks for redundant uses of double splat hash braces.'
+  Enabled: true
+Style/RedundantEach:
+  Description: 'Checks for redundant `each`.'
+  Enabled: true
+Style/RedundantFilterChain:
+  Description: >-
+                  Identifies usages of `any?`, `empty?`, `none?` or `one?` predicate methods chained to
+                  `select`/`filter`/`find_all` and change them to use predicate method instead.
+  Enabled: true
+Style/RedundantHeredocDelimiterQuotes:
+  Description: 'Checks for redundant heredoc delimiter quotes.'
+  Enabled: true
+Style/RedundantInitialize:
+  Description: 'Checks for redundant `initialize` methods.'
+  Enabled: true
+Style/RedundantLineContinuation:
+  Description: 'Check for redundant line continuation.'
+  Enabled: true
+Style/RedundantRegexpArgument:
+  Description: 'Identifies places where argument can be replaced from a deterministic regexp to a string.'
+  Enabled: true
+Style/RedundantRegexpConstructor:
+  Description: 'Checks for the instantiation of regexp using redundant `Regexp.new` or `Regexp.compile`.'
+  Enabled: true
+Style/RedundantSelfAssignmentBranch:
+  Description: 'Checks for places where conditional branch makes redundant self-assignment.'
+  Enabled: true
+Style/RedundantStringEscape:
+  Description: 'Checks for redundant escapes in string literals.'
+  Enabled: true
+Style/ReturnNilInPredicateMethodDefinition:
+  Description: 'Checks if uses of `return` or `return nil` in predicate method definition.'
+  Enabled: true
+Style/SelectByRegexp:
+  Description: 'Prefer grep/grep_v to select/reject with a regexp match.'
+  Enabled: true
+Style/SingleLineDoEndBlock:
+  Description: 'Checks for single-line `do`...`end` blocks.'
+  Enabled: true
+Style/StringChars:
+  Description: 'Checks for uses of `String#split` with empty string or regexp literal argument.'
+  Enabled: true
+Style/SuperWithArgsParentheses:
+  Description: 'Use parentheses for `super` with arguments.'
+  Enabled: true
+Style/SwapValues:
+  Description: 'Enforces the use of shorthand-style swapping of 2 variables.'
+  Enabled: true
+Style/YAMLFileRead:
+  Description: 'Checks for the use of `YAML.load`, `YAML.safe_load`, and `YAML.parse` with `File.read` argument.'
+  Enabled: true
+Style/AccessorGrouping:
+  Description: Checks for grouping of accessors in `class` and `module` bodies.
+  Enabled: true
+Style/ArrayCoercion:
+  Description: >-
+                  Use Array() instead of explicit Array check or [*var], when dealing
+                  with a variable you want to treat as an Array, but you're not certain it's an array.
+  Enabled: true
+Style/BisectedAttrAccessor:
+  Description: >-
+                Checks for places where `attr_reader` and `attr_writer`
+                for the same method can be combined into single `attr_accessor`.
+  Enabled: true
+Style/CaseLikeIf:
+  Description: This cop identifies places where `if-elsif` constructions can be replaced with `case-when`.
+  Enabled: true
+Style/ExplicitBlockArgument:
+  Description: >-
+                  Consider using explicit block argument to avoid writing block literal
+                  that just passes its arguments to another block.
+  Enabled: true
+Style/ExponentialNotation:
+  Description: When using exponential notation, favor a mantissa between 1 (inclusive) and 10 (exclusive).
+  Enabled: true
+Style/GlobalStdStream:
+  Description: Enforces the use of `$stdout/$stderr/$stdin` instead of `STDOUT/STDERR/STDIN`.
+  Enabled: true
+Style/HashAsLastArrayItem:
+  Description: >-
+                 Checks for presence or absence of braces around hash literal as a last
+                 array item depending on configuration.
+  Enabled: true
+Style/HashEachMethods:
+  Description: Use Hash#each_key and Hash#each_value.
+  Enabled: true
+Style/HashLikeCase:
+  Description: >-
+                  Checks for places where `case-when` represents a simple 1:1
+                  mapping and can be replaced with a hash lookup.
+  Enabled: true
+Style/HashTransformKeys:
+  Description: Prefer `transform_keys` over `each_with_object`, `map`, or `to_h`.
+  Enabled: true
+Style/HashTransformValues:
+  Description: Prefer `transform_values` over `each_with_object`, `map`, or `to_h`.
+  Enabled: true
+Style/OptionalBooleanParameter:
+  Description: Use keyword arguments when defining method with boolean argument.
+  Enabled: true
+Style/RedundantAssignment:
+  Description: Checks for redundant assignment before returning.
+  Enabled: true
+Style/RedundantFetchBlock:
+  Description: >-
+                  Use `fetch(key, value)` instead of `fetch(key) { value }`
+                  when value has Numeric, Rational, Complex, Symbol or String type, `false`, `true`, `nil` or is a constant.
+  Enabled: true
+Style/RedundantFileExtensionInRequire:
+  Description: >-
+                  Checks for the presence of superfluous `.rb` extension in
+                  the filename provided to `require` and `require_relative`.
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Description: Checks for unnecessary single-element Regexp character classes.
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Description: Checks for redundant escapes in Regexps.
+  Enabled: false
+Style/SingleArgumentDig:
+  Description: Avoid using single argument dig method.
+  Enabled: true
+Style/SlicingWithRange:
+  Description: Checks array slicing is done with endless ranges when suitable.
+  Enabled: true
+Style/StringConcatenation:
+  Description: Checks for places where string concatenation can be replaced with string interpolation.
+  Enabled: true
+
