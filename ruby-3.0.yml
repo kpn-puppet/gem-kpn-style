@@ -86,6 +86,14 @@ RSpec/BeforeAfterAll:
 RSpec/ContainExactly:
   Description: Checks where `contain_exactly` is used.
   Enabled: true
+RSpec/ContextWording:
+  Description: Checks that `context` docstring starts with an allowed prefix.
+  Enabled: true
+  Prefixes:
+    - when
+    - with
+    - without
+  AllowedPatterns: ['on']
 RSpec/DuplicatedMetadata:
   Description: Avoid duplicated metadata.
   Enabled: true
@@ -111,7 +119,6 @@ RSpec/MetadataStyle:
   Description: Use consistent metadata style.
   Enabled: true
 RSpec/PendingWithoutReason:
-  PendingWithoutReason:
   Description: Checks for pending or skipped examples without reason.
   Enabled: true
 RSpec/ReceiveMessages:
