@@ -65,6 +65,22 @@ inherit_gem:
   kpn-style:
     - ruby-3.0.yml
 ```
+
+Or for Ruby 3.4:
+
+```yaml
+inherit_gem:
+  kpn-style:
+    - ruby-3.4.yaml
+```
+
+Or for Ruby 4.0:
+
+```yaml
+inherit_gem:
+  kpn-style:
+    - ruby-4.0.yaml
+```
 Now, run:
 
 ```bash
@@ -91,7 +107,7 @@ For example:
 ```yaml
 inherit_gem:
   kpn-style:
-    - ruby-2.7.yml
+    - ruby-4.0.yml
 
 inherit_from: .rubocop_todo.yml
 
@@ -102,7 +118,7 @@ AllCops:
 
 ## Update gem
 
-1. Update the ruby-2.X.yml file
+1. Update the ruby-4.X.yml file
 2. Update the version parameter `spec.version` in the `kpn_style.gemspec`
 3. Tag the release: `git tag VERSION`
 4. Push changes: `git push --tags`
