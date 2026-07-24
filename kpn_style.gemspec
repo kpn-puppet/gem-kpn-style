@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'kpn-style'
-  spec.version       = '0.3.0'
+  spec.version       = '0.3.2'
   spec.authors       = ['kpn']
   spec.email         = ['noreply@kpn.com']
 
@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rubocop', '~> 1.88'
   spec.add_dependency 'rubocop-rspec', '~> 3.5.0'
-  spec.add_dependency 'rubocop-rails', '~> 2.28.0'
-  spec.add_dependency 'rubocop-factory_bot', '~> 3.0.0'
+  spec.add_dependency 'rubocop-rails', '~> 2.32.0'
+  spec.add_dependency 'rubocop-factory_bot', '~> 2.28.0'
+  spec.add_dependency 'rubocop-capybara', '~> 3.0.0'
 end
